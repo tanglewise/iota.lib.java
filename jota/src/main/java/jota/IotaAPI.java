@@ -232,8 +232,8 @@ public class IotaAPI extends IotaAPICore {
      * @return Transactions objects.
      * @throws ArgumentException is thrown when invalid trytes is provided.
      */
-    public List<Transaction> sendTrytes(final String[] trytes, final int depth, final int minWeightMagnitude) throws ArgumentException {
-        final GetTransactionsToApproveResponse txs = getTransactionsToApprove(depth);
+    public List<Transaction> sendTrytes(final String[] trytes, final Integer depth, final Integer minWeightMagnitude) throws ArgumentException {
+        final GetTransactionsToApproveResponse txs = getTransactionsToApprove(depth, null);
 
         // attach to tangle - do pow
         final GetAttachToTangleResponse res = attachToTangle(txs.getTrunkTransaction(), txs.getBranchTransaction(), minWeightMagnitude, trytes);
