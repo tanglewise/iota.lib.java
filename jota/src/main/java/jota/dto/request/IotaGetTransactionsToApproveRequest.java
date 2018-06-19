@@ -8,20 +8,22 @@ import jota.IotaAPICommands;
 public class IotaGetTransactionsToApproveRequest extends IotaCommandRequest {
 
     private Integer depth;
+    private String reference;
 
     /**
      * Initializes a new instance of the IotaGetTransactionsToApproveRequest class.
      */
-    private IotaGetTransactionsToApproveRequest(final Integer depth) {
+    private IotaGetTransactionsToApproveRequest(final Integer depth, final String reference) {
         super(IotaAPICommands.GET_TRANSACTIONS_TO_APPROVE);
         this.depth = depth;
+        this.reference = reference;
     }
 
     /**
      * Create a new instance of the IotaGetTransactionsToApproveRequest class.
      */
-    public static IotaGetTransactionsToApproveRequest createIotaGetTransactionsToApproveRequest(Integer depth) {
-        return new IotaGetTransactionsToApproveRequest(depth);
+    public static IotaGetTransactionsToApproveRequest createIotaGetTransactionsToApproveRequest(Integer depth, String reference) {
+        return new IotaGetTransactionsToApproveRequest(depth, reference);
     }
 
     /**
@@ -32,6 +34,9 @@ public class IotaGetTransactionsToApproveRequest extends IotaCommandRequest {
     public Integer getDepth() {
         return depth;
     }
+    public String getReference() {
+        return reference;
+    }
 
     /**
      * Sets the depth.
@@ -40,5 +45,8 @@ public class IotaGetTransactionsToApproveRequest extends IotaCommandRequest {
      */
     public void setDepth(Integer depth) {
         this.depth = depth;
+    }
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 }
