@@ -130,7 +130,8 @@ public class IotaCoreApiTest {
     @Test // very long execution
     @Category(IntegrationTest.class)
     public void shouldGetTransactionsToApprove() {
-        GetTransactionsToApproveResponse res = proxy.getTransactionsToApprove(27);
+        Integer depth = 27;
+        GetTransactionsToApproveResponse res = proxy.getTransactionsToApprove(depth, null);
         assertThat(res.getTrunkTransaction(), IsNull.notNullValue());
         assertThat(res.getBranchTransaction(), IsNull.notNullValue());
     }
