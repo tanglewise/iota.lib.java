@@ -1,3 +1,5 @@
+#NOTE: This repo has been modified to allow tx to be passed as reference when selecting tx to approve.
+
 ![IOTA Logo][iota-logo]
 
 # IOTA Java Library
